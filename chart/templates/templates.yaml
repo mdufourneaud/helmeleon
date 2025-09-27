@@ -1,4 +1,4 @@
 {{ range .Values.templates }}
 ---
-{{ tpl (toYaml .) $ }}
+{{ tpl (toYaml . | replace "<<" "{{" | replace ">>" "}}") $ }}
 {{ end }}
