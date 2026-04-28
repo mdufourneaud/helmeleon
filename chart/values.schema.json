@@ -1,0 +1,21 @@
+{
+	"$schema":     "https://json-schema.org/draft/2020-12/schema",
+	"$id":         "https://github.com/mdufourneaud/helmeleon/chart/values.schema.json",
+	"title":       "Helmeleon Values",
+	"description": "Helm values defining templates of manifests to render.",
+	"type":        "object",
+	"properties": {
+		"templates": {
+			"description": "Templates of manifests to render defined as array or map of templates.",
+			"anyOf": [{
+				"type": "array",
+				"items": {
+					"type": "object"
+				}
+			}, {
+				"type": "object"
+			}]
+		}
+	},
+	"required": ["templates"]
+}
